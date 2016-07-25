@@ -16,15 +16,15 @@ import ctn_benchmark
 class Vision_Model(ctn_benchmark.Benchmark):
     def params(self):
         self.default('runtime', runtime = 2)
-        self.default('result_feedback', result_feedback = 0.5)
-        self.default('compare_to_result_strength', compare_to_result_strength = 0.1)
+        self.default('result_feedback', result_feedback = 0.4195086163487056)
+        self.default('compare_to_result_strength', compare_to_result_strength = 0.12966085928477078)
         self.default('D', D = 32)
         
         # THINGS COMING FROM MOTOR
-        self.default('motor_feedback', motor_feedback = 0)
-        self.default('motor_transform', motor_transform = 10)
-        self.default('finger_feedback', finger_feedback = 0.3)
-        self.default('motor_to_fingers_strength', motor_to_fingers_strength = 0.4)
+        self.default('motor_feedback', motor_feedback = 0.6679273806561052)
+        self.default('motor_transform', motor_transform = 0.6695907794784146)
+        self.default('finger_feedback', finger_feedback = 0.07839757841518613)
+        self.default('motor_to_fingers_strength', motor_to_fingers_strength = 0.907574651630474)
         
         # THINGS COMING FROM VISION
         self.default('AIT_V1_strength', AIT_V1_strength = 0.06848695023305285)

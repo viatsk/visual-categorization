@@ -34,13 +34,13 @@ output_list = v.vector_gen_function(vis_items, vocab = vis_vocab)
 
 
 ### List of feeback things to change ###
-result_feedback = 0.5
-compare_to_result_strength = 0.1
+result_feedback = 0.4195086163487056
+compare_to_result_strength = 0.12966085928477078
 
 ### MODEL ###
 model = spa.SPA(label = 'MAIN')
 with model:
-    model.vision_system = v.make_vision_system(image_list, output_list, n_neurons = 500)
+    model.vision_system = v.make_vision_system(image_list, output_list, n_neurons = 1000, AIT_V1_strength = 0.06848695023305285, V1_r_transform = 0.11090645719111913, AIT_r_transform = 0.8079719992231219)
     model.concept = spa.State(D, vocab = vis_vocab)
     nengo.Connection(model.vision_system.AIT, model.concept.input)
 
@@ -75,7 +75,7 @@ with model:
         transform = mapping.T
         return transform
     
-    model.motor_system = m.make_motor_system(input_items, action_items)
+    model.motor_system = m.make_motor_system(input_items, action_items, motor_feedback = 0.6679273806561052, motor_transform = 0.6695907794784146, finger_feedback = 0.07839757841518613, motor_to_fingers_strength = 0.907574651630474)
 
     nengo.Connection(model.result.output, model.motor_system.motor_input.input, 
         transform = result_to_motor(vocab, model.motor_system.motor_vocab))

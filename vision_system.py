@@ -66,7 +66,7 @@ def display_func(t, x):
            </svg>''' % (input_shape[2]*2, input_shape[1]*2, ''.join(img_str))
 
 
-def make_vision_system(images, outputs, n_neurons = 1000, AIT_V1_strength = 0, AIT_r_transform = 0, V1_r_transform = 0):
+def make_vision_system(images, outputs, n_neurons = 1000, AIT_V1_strength = 0.06848695023305285, V1_r_transform = 0.11090645719111913, AIT_r_transform = 0.8079719992231219):
 
      #represent currently attended item
     vision_system = nengo.Network(label = 'vision_system')
