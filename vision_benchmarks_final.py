@@ -16,20 +16,20 @@ import ctn_benchmark
 class Vision_Model(ctn_benchmark.Benchmark):
     def params(self):
         self.default('runtime', runtime = 2)
-        self.default('result_feedback', result_feedback = 0.4195086163487056)
-        self.default('compare_to_result_strength', compare_to_result_strength = 0.12966085928477078)
+        self.default('result_feedback', result_feedback = 0.46003873368799186)
+        self.default('compare_to_result_strength', compare_to_result_strength = 0.1416302690767407)
         self.default('D', D = 32)
         
         # THINGS COMING FROM MOTOR
-        self.default('motor_feedback', motor_feedback = 0.06848695023305285)
+        self.default('motor_feedback', motor_feedback = 0.13055354933808305)
         self.default('motor_transform', motor_transform = 2.0)
-        self.default('finger_feedback', finger_feedback = 0.9603352183200515)
-        self.default('motor_to_fingers_strength', motor_to_fingers_strength = 0.8079719992231219)
+        self.default('finger_feedback', finger_feedback = 0.6964691855978616)
+        self.default('motor_to_fingers_strength', motor_to_fingers_strength = 0.8333928248007452)
         
         # THINGS COMING FROM VISION
-        self.default('AIT_V1_strength', AIT_V1_strength = 0.06848695023305285)
-        self.default('V1_r_transform', V1_r_transform = 0.11090645719111913)
-        self.default('AIT_r_transform', AIT_r_transform = 0.8079719992231219 )
+        self.default('AIT_V1_strength', AIT_V1_strength = 0.10606490595473272)
+        self.default('V1_r_transform', V1_r_transform = 0.10606490595473272)
+        self.default('AIT_r_transform', AIT_r_transform = 0.6964691855978616)
     
     def model(self, p):
         vis_items = ['FATIGUE', 'WHISKEY']
