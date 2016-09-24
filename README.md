@@ -8,28 +8,28 @@ The model written for this task is composed of a visual system, a motor system, 
 Since the nengo model has components analogous to the actual brain, we decided that we could compare the delay time response of the components of our model to the times discussed in the paper. The following are approximations in the expected delay of various components, which were calculated from the differences between the averages of the ranges given in the aforementioned image. 
 
 		retina_to_V1 = 40 ms
-V1_to_AIT = 40 ms
-AIT_to_PFC = 30 ms
-PFC_to_PMC = ~20ms
-PMC_to_MC = ~25 ms
-MC_to_finger = ~25 ms
-finger_to_end = ~ 30 ms
+		V1_to_AIT = 40 ms
+		AIT_to_PFC = 30 ms
+		PFC_to_PMC = ~20ms
+		PMC_to_MC = ~25 ms
+		MC_to_finger = ~25 ms
+		finger_to_end = ~ 30 ms
 
 In order to evaluate the success of the model, we want the latencies of different brain structures in monkeys to match up with the latencies between analogous components of the model. To get the activation times out of the model, each of the probed ensembles was compared to what it should ideally contain (for example - the decoded output of the V1 ensemble was compared to the image that was being presented to it). Once the similarity between a decoded output and the expected object was more than 0.5, that ensemble was considered to have been activated. The latencies were calculated by subtracting the activation times from the appropriate ensembles. 
 
 Initially, the model ran too fast. In order to fit our measured latencies to the empirical data, the model would have to be slowed down. One way of doing that would be to inject feedback connections between ensembles and trying to optimize the strengths of said feedback connections so that the resulting latencies match up with biological data. Here’s a complete list of all the parameters considered variable: 
-
+![alt tag](https://github.com/agaikova/visual-categorization/blob/master/networkimage.png)
 
 
 		Result feedback
-Compare to result feedback
-Motor transform
-Motor feedback
-Finger feedback
-Motor to finger strength
-AIT to V1 strength
-V1 recursive connection
-AIT recursive connection
+		Compare to result feedback
+		Motor transform
+		Motor feedback
+		Finger feedback
+		Motor to finger strength
+		AIT to V1 strength
+		V1 recursive connection
+		AIT recursive connection
 
 The list includes all recursive connections, transform scaling and feedback connections. 
 
